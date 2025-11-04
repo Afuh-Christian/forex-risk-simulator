@@ -1,0 +1,7 @@
+{
+  "name": "Forex risk simulator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
