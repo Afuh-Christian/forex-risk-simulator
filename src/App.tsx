@@ -5,6 +5,8 @@ import {
 
   IonPage,
 
+  IonRouterOutlet,
+
   setupIonicReact
 } from '@ionic/react';
 
@@ -39,18 +41,30 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 import IonAppComponent from './pages/IonAppComponent';
+import { IonReactRouter } from '@ionic/react-router';
+import { Route } from 'react-router';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonPage>
+const BaseApp: React.FC = () => (
+  <IonPage>
          <IonContent>
           <IonAppComponent/>
          </IonContent>
 
     </IonPage>
+);
+
+
+const App: React.FC = () => (
+  <IonApp>
+     <IonReactRouter>
+      <IonRouterOutlet>
+        <Route path="/" component={BaseApp} />
+      </IonRouterOutlet>
+    </IonReactRouter>
   </IonApp>
 );
+
 
 export default App;
